@@ -1,4 +1,14 @@
 /*  style reset */
+html{
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 h1,
 h2,
 h3,
@@ -12,13 +22,11 @@ ul {
 }
 .link {
   text-decoration: none;
-  transition: color  250ms cubic-bezier(0.4, 0, 0.2, 1) ;
+  transition: color  250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 /* Головні стилі */
 
-* {
-  box-sizing: border-box;
-}
 
 :root {
   --main-color: #212121;
@@ -33,12 +41,13 @@ ul {
   --portfolio-button-bg: #f5f4fa;
 }
 .container {
-  width: 1200px;
+  width: 1230px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
 .body {
+  margin: 0;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   color: var(--main-color);
@@ -108,8 +117,6 @@ ul {
 .header-contacts {
   display: flex;
   align-items: center;
- 
-  
 }
 
 .contact-icon{
@@ -153,6 +160,7 @@ ul {
   letter-spacing: 0.02em;
   color: var(--second-color);
   fill: var(--second-color);
+  transition: fill  250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-mail-link:hover,
@@ -431,6 +439,8 @@ color: #FFFFFF;
   justify-content: center;
   color: #AFB1B8;
   content "";
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+              
 }
 
 .social-link-team:hover,
@@ -440,6 +450,7 @@ color: #FFFFFF;
 
 .social-icon{
   fill: currentColor;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link-team:hover,
@@ -491,6 +502,7 @@ color: var(--black-color);
   border:1px solid #AFB1B8;
   border-radius: 4px;
   content "";
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:hover,
@@ -501,6 +513,7 @@ color: var(--black-color);
 
 .client-icon{
   fill:currentColor;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -607,14 +620,17 @@ content "";
   border-radius: 50%;
   color: var(--white-color);
   content "";
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-link:hover{
+.social-link:hover,
+.social-link:focus{
   background-color: var(--hero-button-bg);
   }
 
 .social-icon{
   fill:currentColor;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -648,6 +664,9 @@ content "";
   color: var(--main-color);
   cursor: pointer;
   font-family: inherit;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-button:hover,
@@ -690,7 +709,6 @@ border-radius: 4px;
 }
 
 .exsamples-desc {
-  
   font-size: 16px;
   line-height: calc(30 / 16);
   letter-spacing: 0.03em;
@@ -711,6 +729,7 @@ border-radius: 4px;
 
 .examples-click{
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .examples-click:hover,
@@ -750,7 +769,9 @@ line-height: calc(28/18);
 letter-spacing: 0.03em;
 }
 
-.exsamples-item:hover .text-hover{
+
+.examples-click:hover .text-hover,
+.examples-click:focus .text-hover{
     transform: translateY(0);
 }
 
@@ -762,10 +783,10 @@ letter-spacing: 0.03em;
   position: fixed;
   top: 0;
   left: 0;
-  transition: opacity 500ms, visibility 500ms;
+  transition: opacity 500ms, visibility 2500ms;
 
-  width: 100%;
-  height: 1024px;
+  width: 100vw;
+  height: 100vh;
   
   background: rgba(0, 0, 0, 0.2);
   
@@ -789,32 +810,46 @@ border-radius: 4px;
 }
 
 .modal-backdrop.is-hidden {
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
 
 .modal .close-sign {
   position: absolute;
-  top: 10px;
-  right: 10px;
-
-  width: 30px;
-  height: 30px;
+  top: 8px;
+  right: 8px;
   display: flex;
   
-  cursor: pointer;
-    
-  background-color: var(--white-color);
 }
 
 .modal-icon{
   content "";
+  display: flex;
+  fill: currentColor;
   background-size:cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: var(--white-color);
   justify-content: center;
   align-items: center;
-
+cursor: pointer;
   border:1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  
+  transition: fill  250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
